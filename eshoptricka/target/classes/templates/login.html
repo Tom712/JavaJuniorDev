@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="sk" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+<head>
+  <title>Login form</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <style>
+    body {
+      text-align: center;
+      padding-top: 50px;
+      background-color: #41b3a3;
+    }
+    h1 {
+      color: #E8A87C;
+      -webkit-text-stroke: 1px black;
+      font-size: xxx-large;
+    }
+    a {
+      text-decoration: none;
+      font-size: large;
+      background-color: lightyellow;
+      color: black;
+      padding: 10px;
+      border-radius: 12px;
+    }
+    a:hover {
+      background-color: lightblue;
+    }
+
+
+    br {
+      margin: 20px;
+    }
+
+    form{
+      padding: 10px;
+      text-align: center;
+
+    }
+    input{
+      text-align: center;
+    }
+
+    form div{
+      padding: 10px;
+
+    }
+
+    form div input:hover {
+      background-color: lightyellow;
+    }
+
+
+
+
+
+  </style>
+
+
+</head>
+<body class="container">
+<div th:if="${param.error}">
+  Invalid username and password.
+</div>
+<div th:if="${param.logout}">
+  You have been logged out.
+  <script>
+        // Presmeruje na hlavnu stranku po 3-och sekundach
+        window.onload = setTimeout(function() {
+                window.location.href = "/";
+            }, 1000); // 3000 milisekúnd (3 sekúnd)
+   </script>
+</div>
+<form th:action="@{/login}" method="post">
+  <div><label> Login : <input type="text" name="username"  class="form-control col-12" /> </label></div>
+  <div><label> Heslo: <input type="password" name="password" class="form-control col-12"/> </label></div>
+  <div><input
+          style="background-color: lightgray;
+          padding:10px;
+          border-radius: 12px;
+          color:black;
+          text-decoration: none"
+
+
+          type="submit" value="Prihlásiť" class="btn btn-info col-2" /></div>
+</form>
+</body>
+</html>

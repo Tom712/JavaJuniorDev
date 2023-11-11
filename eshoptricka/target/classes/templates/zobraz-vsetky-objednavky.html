@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="sk" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Zobraz všetky objednávky</title>
+  <link rel="stylesheet" type="text/css" href="../static/styles.css">
+
+  <style>
+    body {
+      text-align: center;
+      padding-top: 50px;
+      background-color: #41b3a3;
+    }
+    h1 {
+      color: #E8A87C;
+      -webkit-text-stroke: 1px black;
+      font-size: xxx-large;
+    }
+    a {
+      text-decoration: none;
+      font-size: large;
+      background-color: #daad86;
+      color: black;
+      padding: 10px;
+      border-radius: 12px;
+    }
+    a:hover {
+      background-color: lightblue;
+    }
+
+
+    br {
+      margin: 20px;
+    }
+
+    form{
+      padding: 10px;
+      text-align: center;
+
+    }
+    input{
+      text-align: center;
+    }
+
+    form div{
+      padding: 10px;
+
+    }
+
+    form div input:hover {
+      background-color: lightyellow;
+    }
+
+    table{
+      margin: auto;
+      align-self: center;
+      background-color: honeydew;
+    }
+
+    table tbody a{
+      text-decoration: none;
+      font-size: large;
+      background-color: transparent;
+      color: black;
+      padding: 2px;
+      border-radius: 12px;
+    }
+
+  </style>
+
+
+</head>
+<body>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Popis</th>
+        <th>Farba</th>
+        <th>Značka</th>
+        <th>Veľkosť</th>
+        <th>Počet</th>
+        <th>Dátum objednávky</th>
+        <th>Meno zákazníka</th>
+        <th>Akcie</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr th:each="konkretnaObjednavka:${vsetkyObjednavkyThymeleaf}">
+        <td th:text="${konkretnaObjednavka.popis}"></td>
+        <td th:text="${konkretnaObjednavka.farba}"></td>
+        <td th:text="${konkretnaObjednavka.znacka}"></td>
+        <td th:text="${konkretnaObjednavka.velkost}"></td>
+        <td th:text="${konkretnaObjednavka.pocet}"></td>
+        <td th:text="${konkretnaObjednavka.datumObjednavky}"></td>
+        <td th:text="${konkretnaObjednavka.menoZakaznika}"></td>
+        <td>
+          <a th:href="@{/uprav-objednavku/{id}(id=${konkretnaObjednavka.id})}">Uprav objednávku</a>
+          <a th:href="@{/odstran-objednavku/{id}(id=${konkretnaObjednavka.id})}">Odstráň objednávku</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+  <a href="/" alt="Odkaz na hlavnú stránku">Späť na hlavnú stránku</a>
+  <br>
+  <form th:action="@{/logout}" method="post">
+    <input style="background-color: lightgray;
+           padding:10px;
+           border-radius: 12px;
+           color:black;
+           text-decoration: none;
+           margin-left: -40px;"
+           type="submit" value="Sign Out"/>
+  </form>
+</body>
+</html>
