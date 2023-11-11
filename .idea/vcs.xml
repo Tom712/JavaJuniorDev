@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/DataFromRestController" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/EvidenciaVydavkov" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/EvidenciaVydavkovMySQL" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/EvidenciaVydavkovSwingMySQL" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/EvidenciaVydavkovSwingMySQL/final" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/EvidenicaVydavkovApp" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Export2PDF" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/JavaPriklady" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/MySQL" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/MySqlCRUD2tables" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/OpakovanieNaDedicnost" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/VydavkySpringBoot" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/library_be_public" vcs="Git" />
+  </component>
+</project>
